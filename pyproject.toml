@@ -5,7 +5,7 @@ bundle = "com.edgetts"
 version = "0.0.1"
 url = "https://edgetts.com/edgetts"
 license.file = "LICENSE"
-author = "易峰"
+author = "ifeng"
 author_email = "wsyifeng@163.com"
 
 [tool.briefcase.app.edgetts]
