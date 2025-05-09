@@ -1,50 +1,38 @@
-name: CI
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
+
 on:
   push:
     tags:
       - v*
-
-# Cancel active CI runs for a PR before starting another run
-concurrency:
-  group: ${{ github.workflow}}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
-
-env:
-  FORCE_COLOR: "1"
-
-defaults:
-  run:
-    shell: bash
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 jobs:
-  ci:
+  build:
+
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install briefcase
+    - name: Build APk
+      run: |
+        briefcase build android
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"  # update with your targeted Python version
-
-      - name: Install Briefcase
-        run: |
-          python -m pip install -U pip setuptools wheel
-          python -m pip install briefcase
-
-      - name: Setup Environment
-        run: |
-          # Use GitHub's preinstalled JDK 17 for Android builds
-          echo JAVA_HOME="${JAVA_HOME_17_X64:-$JAVA_HOME_17_arm64}" | tee -a ${GITHUB_ENV}
-          # ${{ matrix.pre-command }}
-
-      - name: Build App
-        run: |
-          briefcase build android
-          mv build/edgetts/android/gradle/app/build/outputs/apk/debug/app-debug.apk EdgeTTS.apk
-      
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        if: github.ref_type == 'tag'
-        with: |
-          files: EdgeTTS.apk
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      if: github.ref_type == 'tag'
+      with: 
+        files: build/edgetts/android/gradle/app/build/outputs/apk/debug/app-debug.apk
