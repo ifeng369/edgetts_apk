@@ -4,6 +4,9 @@ EdgeTTS
 
 基于 Briefcase，edge-tts，flask开发的语音合成软件。
 
+下载地址： https://github.com/ifeng369/edgetts_apk/releases/latest/download/app-debug.apk
+
+
 食用方式：安装并运行apk文件。添加后台白名单，电池策略调整为：允许后台高耗电。
 阅读APP添加朗读引擎：
 
