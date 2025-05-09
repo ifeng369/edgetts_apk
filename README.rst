@@ -9,7 +9,7 @@ EdgeTTS
 
 名称: 随意
 URL: 
-```http://127.0.0.1:3000,{"method": "POST","body":{"voice":3,"speed":"{{speakSpeed*2}}","text":{{java.encodeURI(speakText)}}}}```
+``http://127.0.0.1:3000,{"method": "POST","body":{"voice":3,"speed":"{{speakSpeed*2}}","text":{{java.encodeURI(speakText)}}}}``
 
 voice: 0-5，对应以下语音列表
     0. "zh-CN-XiaoxiaoNeural"
