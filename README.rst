@@ -22,11 +22,13 @@ URL:
 ``http://127.0.0.1:3000,{"method": "POST","body":{"voice":3,"speed":"{{speakSpeed*2}}","text":{{java.encodeURI(speakText)}}}}``
 
 voice: 0-5，对应以下语音列表
-    0. "zh-CN-XiaoxiaoNeural"
-    1. "zh-CN-XiaoyiNeural"
-    2. "zh-CN-YunjianNeural"
-    3. "zh-CN-YunxiNeural"
-    4. "zh-CN-YunxiaNeural"
-    5. "zh-CN-YunyangNeural"
+    0. "zh-CN-XiaoxiaoNeural 女声"
+    1. "zh-CN-XiaoyiNeural 女声"
+    2. "zh-CN-YunjianNeural 男声"
+    3. "zh-CN-YunxiNeural 男声"
+    4. "zh-CN-YunxiaNeural 男声"
+    5. "zh-CN-YunyangNeural 女声"
+    6. "zh-CN-liaoning-XiaobeiNeural 女声"
+    7. "zh-CN-shaanxi-XiaoniNeural 女声"
 
 

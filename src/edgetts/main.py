@@ -12,8 +12,9 @@ VOICES = [
     "zh-CN-YunxiNeural",
     "zh-CN-YunxiaNeural",
     "zh-CN-YunyangNeural",
+    "zh-CN-liaoning-XiaobeiNeural",
+    "zh-CN-shaanxi-XiaoniNeural",
 ]
-
 
 @app.route('/', methods=['POST'])
 async def hello_world():
