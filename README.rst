@@ -1,6 +1,12 @@
 EdgeTTS
 =======
 
+```
+pip install edge-tts flask[async] briefcase
+
+briefcase package android
+```
+
 
 基于 Briefcase，edge-tts，flask开发的语音合成软件。
 
