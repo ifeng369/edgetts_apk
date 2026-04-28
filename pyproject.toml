@@ -2,7 +2,7 @@
 [tool.briefcase]
 project_name = "EdgeTTS"
 bundle = "com.edgetts"
-version = "0.0.1"
+version = "0.0.2"
 url = "https://edgetts.com/edgetts"
 license.file = "LICENSE"
 author = "ifeng"
