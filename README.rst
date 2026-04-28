@@ -1,13 +1,6 @@
 EdgeTTS
 =======
 
-```
-pip install edge-tts flask[async] briefcase
-
-briefcase package android
-```
-
-
 基于 Briefcase，edge-tts，flask开发的语音合成软件。
 
 下载地址： https://github.com/ifeng369/edgetts_apk/releases/latest/download/app-debug.apk
